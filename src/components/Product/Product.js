@@ -5,6 +5,18 @@ import './Product.css';
 
 const Product = ({ title, price, image, rating, id }) => {
     const { dispatch } = useAuth();
+    const addToBasket = () => {
+        dispatch({
+            type: "ADD_TO_BASKET",
+            item: {
+                id: id,
+                title: title,
+                image: image,
+                price: price,
+                rating: rating,
+            },
+        });
+    };
 
     return (
         <div className="product">
@@ -26,7 +38,7 @@ const Product = ({ title, price, image, rating, id }) => {
             </div>
 
             <img src={image} alt='product-img' />
-            <button>Add to Basket</button>
+            <button onClick={addToBasket}>Add to Basket</button>
         </div>
     )
 }

@@ -3,6 +3,7 @@ import homeImg from "./../../images/home.jpg";
 import Product from "../Product/Product";
 import './Home.css';
 import shortid from "shortid";
+
 import ProductImg1 from "./../../images/products/1.png";
 import ProductImg2 from "./../../images/products/2.png";
 import ProductImg3 from "./../../images/products/3.png";
