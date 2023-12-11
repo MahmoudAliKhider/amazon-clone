@@ -20,7 +20,7 @@ const Product = ({ title, price, image, rating, id }) => {
                     .fill()
                     .map((_, i) => (
                         <p key={i}>
-                            <img src={starIcon} alt=''/>
+                            <img src={starIcon} alt='' />
                         </p>
                     ))}
             </div>
