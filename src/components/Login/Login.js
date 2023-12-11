@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 
 import logo from './../../images/login-logo.png';
 import { Link, useNavigate } from 'react-router-dom';
@@ -11,6 +11,17 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
+    const LogIn = (e) => {
+        e.preventDefault();
+        signInWithEmailAndPassword(auth, email, password).then((auth) => {
+            if (auth) {
+                navigate('/');
+            }
+        }).catch((error) => {
+            alert(error.message)
+        })
+
+    }
     const register = (e) => {
         e.preventDefault();
         createUserWithEmailAndPassword(auth, email, password).then((auth) => {
@@ -43,7 +54,7 @@ const Login = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    <button className='login-signInBtn' type='submit'>
+                    <button className='login-signInBtn' type='submit' onClick={LogIn}>
                         Sign In
                     </button>
 
