@@ -5,6 +5,8 @@ import Login from './components/Login/Login';
 import { useAuth } from './context/GlobalState';
 import { useEffect } from 'react';
 import { auth } from './firebase';
+import Home from './components/Home/Home';
+
 function App() {
   const { dispatch } = useAuth();
 
@@ -22,12 +24,15 @@ function App() {
         })
       }
     })
-  }, []);
+  },);
 
   return (
     <div >
       <Routes>
-        <Route path='/' element={<Header />} />
+        <Route path='/' element={<>
+          <Header />
+          <Home />
+        </>} />
         <Route path='/login' element={<Login />} />
         <Route path='*' element={<h1> Page Not Found </h1>} />
       </Routes>
