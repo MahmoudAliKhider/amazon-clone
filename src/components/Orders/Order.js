@@ -7,7 +7,7 @@ import "./Order.css";
 const Order = ({ order }) => {
 
   if (!order || !order.data) {
-    console.log(order)
+    
     return null; // or display a loading message or some default content
   }
 
