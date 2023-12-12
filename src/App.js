@@ -8,7 +8,7 @@ import { auth } from './firebase';
 import Home from './components/Home/Home';
 import Checkout from './components/CheckOut/Checkout';
 import Payment from './components/Payment/Payment';
-import Order from './components/Orders/Order';
+import Orders from './components/Orders/Order';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
@@ -56,7 +56,7 @@ function App() {
         <Route path='/orders' element={
           <>
             <Header />
-            <Order />
+            <Orders />
           </>
         } />
         <Route path='/login' element={<Login />} />
